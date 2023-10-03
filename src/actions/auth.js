@@ -25,9 +25,7 @@ export const createAccount = (username, email, password) => (dispatch) => {
     },
     (error) => {
       const message =
-        (error.response &&
-          error.response.data &&
-          error.response.data.message) ||
+        (error.response && error.response.data && error.response.data.message) ||
         error.message ||
         error.toString();
 
@@ -41,7 +39,7 @@ export const createAccount = (username, email, password) => (dispatch) => {
       });
 
       return Promise.reject();
-    }
+    },
   );
 };
 
@@ -57,9 +55,7 @@ export const login = (username, password) => (dispatch) => {
     },
     (error) => {
       const message =
-        (error.response &&
-          error.response.data &&
-          error.response.data.message) ||
+        (error.response && error.response.data && error.response.data.message) ||
         error.message ||
         error.toString();
 
@@ -73,7 +69,7 @@ export const login = (username, password) => (dispatch) => {
       });
 
       return Promise.reject();
-    }
+    },
   );
 };
 

@@ -1,9 +1,9 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8080/api/auth/";
+const API_URL = process.env.REACT_APP_API_URL + "user/";
 
 const createAccount = (username, email, password) => {
-  return axios.post(API_URL + "signup", {
+  return axios.post(API_URL + "createUser", {
     username,
     email,
     password,
@@ -12,7 +12,7 @@ const createAccount = (username, email, password) => {
 
 const login = (username, password) => {
   return axios
-    .post(API_URL + "signin", {
+    .post(API_URL + "login", {
       username,
       password,
     })
@@ -32,7 +32,7 @@ const logout = () => {
 const AuthService = {
   createAccount,
   login,
-  logout
-}
+  logout,
+};
 
-export default AuthService
+export default AuthService;

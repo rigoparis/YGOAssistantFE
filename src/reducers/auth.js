@@ -6,11 +6,9 @@ import {
   LOGOUT,
 } from "../actions/types";
 
-const user = JSON.parse(localStorage.getItem("user"));
+const user = JSON.parse(localStorage.getItem("user"))?.user;
 
-const initialState = user
-  ? { isLoggedIn: true, user }
-  : { isLoggedIn: false, user: null };
+const initialState = user ? { isLoggedIn: true, user } : { isLoggedIn: false, user: null };
 
 const authReducer = (state = initialState, action) => {
   const { type, payload } = action;
@@ -47,6 +45,6 @@ const authReducer = (state = initialState, action) => {
     default:
       return state;
   }
-}
+};
 
 export default authReducer;

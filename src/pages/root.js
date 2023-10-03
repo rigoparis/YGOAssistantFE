@@ -1,15 +1,15 @@
-import React from 'react'
+import React from "react";
 import { Outlet } from "react-router-dom";
 
-import Navbar from '../components/navbar'
+import Navbar from "../components/navbar";
 
 function Root() {
   return (
-    <div>
+    <div className="min-h-full flex flex-col">
       <Navbar />
       <Outlet />
     </div>
-  )
+  );
 }
 
-export default Root
+export default Root;

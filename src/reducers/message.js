@@ -15,6 +15,6 @@ const messageReducer = (state = initialState, action) => {
     default:
       return state;
   }
-}
+};
 
-export default messageReducer
+export default messageReducer;
